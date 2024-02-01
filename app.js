@@ -2,10 +2,13 @@ const facts = require('./facts.json')
 
 const express = require('express')
 const app = express()
+var path = require('path')
 
 const PORT = process.env.PORT || "3000"
 
 app.set('view engine', 'ejs')
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(PORT, ()=> {
     console.log( `App is running on http://localhost:${PORT}...`)
@@ -25,7 +28,7 @@ app.get('/greet', (req, res)=> {
     const year = date.getFullYear()
     const age1 = (year - 1) - (req.query.dob)
     const age2 = year - (req.query.dob)
-    const greeting = `Hello, ${req.query.name}! \n You are ${age1} or ${age2} years old.`
+    const greeting = `Hello, ${req.query.name}! You are ${age1} or ${age2} years old.`
     res.render('greet', {title:"Greetings", message: greeting})
 
 })
@@ -75,15 +78,25 @@ app.get('/pandorasbox', (req, res)=> {
     const randomPandora = Math.floor(Math.random() * 2)
     console.log(randomPandora)
 
-    switch(pandora){
-        case randomPandora === 0:
-            const length = facts.length
-            const random = Math.floor(Math.random() * length)
-            const fact4 = facts[random].fact
+    // switch(pandorasbox){
+    //     case randomPandora === 0:
+    //         const length = facts.length
+    //         const random = Math.floor(Math.random() * length)
+    //         const fact4 = facts[random].fact
 
-            res.render('pandorasbox', {title: "Pandora's Box", message:fact4} )
-        case randomPandora === 1:
-    }
+    //         res.render('pandorasbox', {title: "Pandora's Box", message:fact4} )
+    //     case randomPandora === 1:
+    //         let joke = {}
+    //         fetch("https://icanhazdadjoke.com/", {
+    //             headers: {
+    //                 "Accept": "application/json"
+    //             }
+    //             })
+    //             .then(res => res.json())
+    //             .then( (data) => {
+    //                 res.render('pandorasbox', {title:"Pandora's Box", message: data.joke})
+    //         })
+    // }
 
 
     if(randomPandora === 0) {
