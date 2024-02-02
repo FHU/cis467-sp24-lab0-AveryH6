@@ -45,19 +45,19 @@ app.get('/math/:num1/:op/:num2', (req, res)=> {
 
     switch(op){
         case 'plus':
-            result = num1 + num2
+            result = `${num1} + ${num2} = ${num1 + num2}`
             break
         case 'minus':
-            result = num1 - num2
+            result = `${num1} - ${num2} = ${num1 - num2}`
             break
         case 'times':
-            result = num1 * num2
+            result = `${num1} x ${num2} = ${num1 * num2}`
             break
-        case 'divideby':
-            result = num1 / num2
+        case 'dividedby':
+            result = `${num1} ÷ ${num2} = ${num1 / num2}`
             break
         case 'tothepowerof':
-            result = num1 ** num2
+            result = `${num1} ** ${num2} = ${num1 ** num2}`
             break
         default:
             result = "Sorry! Could not calculate this request."
@@ -77,27 +77,6 @@ app.get('/pandorasbox', (req, res)=> {
 
     const randomPandora = Math.floor(Math.random() * 2)
     console.log(randomPandora)
-
-    // switch(pandorasbox){
-    //     case randomPandora === 0:
-    //         const length = facts.length
-    //         const random = Math.floor(Math.random() * length)
-    //         const fact4 = facts[random].fact
-
-    //         res.render('pandorasbox', {title: "Pandora's Box", message:fact4} )
-    //     case randomPandora === 1:
-    //         let joke = {}
-    //         fetch("https://icanhazdadjoke.com/", {
-    //             headers: {
-    //                 "Accept": "application/json"
-    //             }
-    //             })
-    //             .then(res => res.json())
-    //             .then( (data) => {
-    //                 res.render('pandorasbox', {title:"Pandora's Box", message: data.joke})
-    //         })
-    // }
-
 
     if(randomPandora === 0) {
         const length = facts.length

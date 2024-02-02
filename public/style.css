@@ -28,8 +28,8 @@ p{
 }
 a{
     display: flex;
-    justify-content: left;
-    margin-left: 1rem;
+    justify-content: right;
+    margin-right: 1rem;
     padding: 1rem;
     font-size: xx-large;
     color: black;
