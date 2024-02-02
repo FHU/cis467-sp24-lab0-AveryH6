@@ -17,7 +17,6 @@ h1{
     display: flex;
     background-color: white;
     justify-content: center;
-    text-decoration: underline;
 }
 p{
     display: flex;
