@@ -57,7 +57,7 @@ app.get('/math/:num1/:op/:num2', (req, res)=> {
             result = `${num1} ÷ ${num2} = ${num1 / num2}`
             break
         case 'tothepowerof':
-            result = `${num1} ** ${num2} = ${num1 ** num2}`
+            result = `${num1} ^ ${num2} = ${num1 ** num2}`
             break
         default:
             result = "Sorry! Could not calculate this request."
